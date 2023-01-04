@@ -1,0 +1,10 @@
+{
+	"version-1-6": {
+		"image": "debian:stable-slim",
+		"features": {
+			"julia": {
+				"channel": "1.6"
+			}
+		}
+	}
+}
