@@ -1,5 +1,5 @@
 {
-    "name": "Julia",
+    "name": "Julia (via Juliaup)",
     "id": "julia",
     "version": "1.0.0",
     "description": "Install the Julia programming language",
