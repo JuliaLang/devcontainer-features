@@ -26,4 +26,4 @@ apt_get_update
 
 check_packages curl ca-certificates
 
-curl -fsSL https://install.julialang.org | sh -s -- --yes --default-channel "${VERSION}"
+curl -fsSL https://install.julialang.org | sh -s -- --yes --default-channel "${CHANNEL}"
