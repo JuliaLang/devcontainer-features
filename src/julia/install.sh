@@ -52,3 +52,8 @@ apt_get_update
 check_packages curl ca-certificates
 
 su "${USERNAME}" -c "curl -fsSL https://install.julialang.org | sh -s -- --yes --default-channel ${CHANNEL}"
+
+# Clean up
+rm -rf /var/lib/apt/lists/*
+
+echo "Done!"
