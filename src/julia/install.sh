@@ -28,8 +28,15 @@ elif [ "${USERNAME}" = "none" ] || ! id -u "${USERNAME}" >/dev/null 2>&1; then
     USERNAME=root
 fi
 
-apt_get_update()
-{
+cleanup_apt() {
+    # shellcheck source=/dev/null
+    source /etc/os-release
+    if [ "${ID}" = "debian" ] || [ "${ID_LIKE}" = "debian" ]; then
+        rm -rf /var/lib/apt/lists/*
+    fi
+}
+
+apt_get_update() {
     echo "Running apt-get update..."
     apt-get update -y
 }
@@ -47,13 +54,12 @@ check_packages() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt_get_update
-
+cleanup_apt
 check_packages curl ca-certificates
 
 su "${USERNAME}" -c "curl -fsSL https://install.julialang.org | sh -s -- --yes --default-channel ${CHANNEL}"
 
 # Clean up
-rm -rf /var/lib/apt/lists/*
+cleanup_apt
 
 echo "Done!"
