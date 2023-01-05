@@ -1,7 +1,7 @@
 {
     "name": "Julia (via Juliaup)",
     "id": "julia",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Install the Julia programming language",
     "options": {
         "channel": {
@@ -14,14 +14,14 @@
             "description": "Select a Juliaup channel"
         }
     },
-	"installsAfter": [
-		"ghcr.io/devcontainers/features/common-utils"
-	],
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"julialang.language-julia"
-			]
-		}
-	}
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "julialang.language-julia"
+            ]
+        }
+    }
 }
