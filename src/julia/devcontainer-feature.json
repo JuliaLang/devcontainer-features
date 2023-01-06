@@ -3,6 +3,7 @@
     "id": "julia",
     "version": "1.0.1",
     "description": "Install the Julia programming language",
+    "documentationURL": "https://github.com/JuliaLang/devcontainer-features/tree/main/src/julia",
     "options": {
         "channel": {
             "type": "string",
