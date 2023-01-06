@@ -6,7 +6,7 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "version" julia --version | grep "1.6."
+check "version" julia --version | grep "1.6.1"
 
 # Report result
 reportResults
