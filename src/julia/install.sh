@@ -36,11 +36,6 @@ cleanup_apt() {
     fi
 }
 
-apt_get_update() {
-    echo "Running apt-get update..."
-    apt-get update -y
-}
-
 # Checks if packages are installed and installs them if not
 check_packages() {
     if ! dpkg -s "$@" > /dev/null 2>&1; then
