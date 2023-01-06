@@ -6,5 +6,29 @@
 				"channel": "1.6"
 			}
 		}
+	},
+	"version-1": {
+		"image": "debian:stable-slim",
+		"features": {
+			"julia": {
+				"channel": "1"
+			}
+		}
+	},
+	"alpha": {
+		"image": "debian:stable-slim",
+		"features": {
+			"julia": {
+				"channel": "alpha"
+			}
+		}
+	},
+	"lts": {
+		"image": "debian:stable-slim",
+		"features": {
+			"julia": {
+				"channel": "lts"
+			}
+		}
 	}
 }
