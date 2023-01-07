@@ -30,6 +30,9 @@ You can select a specific Julia version by specifying a [Juliaup](https://github
 }
 ```
 
+`channel` can be also specified as a Julia version, such as `1.5.4`, `1.5`, `1`.
+Check the Juliaup documentation for details.
+
 
 ---
 
