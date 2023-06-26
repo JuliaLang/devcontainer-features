@@ -1,4 +1,4 @@
-#!/usr/local/julia/bin/julia
+#!/usr/bin/env julia
 
 using Pkg
 
