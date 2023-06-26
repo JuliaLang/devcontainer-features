@@ -62,6 +62,5 @@ echo "Copying postcreate.jl into the container..."
 SCRIPT_DIR=/usr/local/julia-devcontainer-features/
 mkdir -p "${SCRIPT_DIR}"
 cp postcreate.jl "${SCRIPT_DIR}/"
-chmod +x "${SCRIPT_DIR}/postcreate.jl"
 
 echo "Done!"

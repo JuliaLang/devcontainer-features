@@ -18,7 +18,9 @@
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils"
     ],
-    "postCreateCommand": ["/usr/local/julia-devcontainer-features/postcreate.jl"],
+    "postCreateCommand": {
+        "julia-activate": "/usr/local/julia-devcontainer-features/postcreate.jl"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
