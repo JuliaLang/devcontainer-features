@@ -1,5 +1,4 @@
 
-
 # Julia (via Juliaup) (julia)
 
 Install the Julia programming language
@@ -17,6 +16,12 @@ Install the Julia programming language
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | channel | Select a Juliaup channel | string | release |
+
+## Customizations
+
+### VS Code Extensions
+
+- `julialang.language-julia`
 
 ## Options
 
