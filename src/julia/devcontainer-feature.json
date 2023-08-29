@@ -1,7 +1,7 @@
 {
     "name": "Julia (via Juliaup)",
     "id": "julia",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Install the Julia programming language",
     "documentationURL": "https://github.com/JuliaLang/devcontainer-features/tree/main/src/julia",
     "options": {
@@ -24,7 +24,8 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "julialang.language-julia"
+                "julialang.language-julia",
+                "tamasfe.even-better-toml"
             ]
         }
     }
