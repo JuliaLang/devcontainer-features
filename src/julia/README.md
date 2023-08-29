@@ -22,6 +22,7 @@ Install the Julia programming language
 ### VS Code Extensions
 
 - `julialang.language-julia`
+- `tamasfe.even-better-toml`
 
 ## Options
 
