@@ -16,6 +16,7 @@ Install the Julia programming language
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | channel | Select a Juliaup channel | string | release |
+| additionalChannels | Additional Juliaup channels to install, separated by commas (e.g., 'nightly,1.10') | string | - |
 
 ## Customizations
 
