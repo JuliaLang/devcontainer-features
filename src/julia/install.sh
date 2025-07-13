@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CHANNEL=${CHANNEL:-"release"}
-
+IFS=',' read -ra channels <<< ${ADDITIONALCHANNELS:-""}
 USERNAME=${USERNAME:-${_REMOTE_USER:-"automatic"}}
 
 set -e
@@ -26,6 +26,13 @@ if [ "${USERNAME}" = "auto" ] || [ "${USERNAME}" = "automatic" ]; then
     fi
 elif [ "${USERNAME}" = "none" ] || ! id -u "${USERNAME}" >/dev/null 2>&1; then
     USERNAME=root
+fi
+
+# Determine the home directory of the user
+if [ "${USERNAME}" = "root" ]; then
+    REMOTE_USER_HOME=${_REMOTE_USER_HOME:-"/root"}
+else
+    REMOTE_USER_HOME=${_REMOTE_USER_HOME:-"/home/${USERNAME}"}
 fi
 
 cleanup_apt() {
@@ -53,6 +60,14 @@ cleanup_apt
 check_packages curl ca-certificates
 
 su "${USERNAME}" -c "curl -fsSL https://install.julialang.org | sh -s -- --yes --default-channel ${CHANNEL}"
+
+for channel in "${channels[@]}"; do
+    # if channel is not empty and not equal to the default channel...
+    if [ "${channel}" != "" ] && [ "${channel}" != "${CHANNEL}" ]; then
+        echo "Adding additional Julia channel: ${channel}";
+        su "${USERNAME}" -c "${REMOTE_USER_HOME}/.juliaup/bin/juliaup add ${channel}";
+    fi
+done
 
 # Clean up
 cleanup_apt
